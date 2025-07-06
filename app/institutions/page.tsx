@@ -1,10 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Eye, EyeOff, Shield, Lock, Key, ArrowRight, Database, Wifi, WifiOff, Settings, Circle } from 'lucide-react'
+import { Building, ArrowRight, CheckCircle, Shield, Zap, Users, Lock, Database, FileCheck, Star } from 'lucide-react'
 import Header from '../components/layout/header'
 
-export default function Services() {
+export default function Institutions() {
   const [isVisible, setIsVisible] = useState<Record<string, boolean>>({})
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
@@ -68,7 +68,7 @@ export default function Services() {
             }`}
           >
             <div className="w-8 h-px bg-gray-700" />
-            WELCOME TO THE AUCTA CIRCLE
+            INSTITUTIONAL INFRASTRUCTURE
             <div className="w-8 h-px bg-gray-700" />
           </div>
           
@@ -77,19 +77,21 @@ export default function Services() {
               isVisible.hero ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Not open.<br/>
-            Not visible.<br/>
-            <span className="text-gray-400">Not optional.</span>
+            Infrastructure for the<br/>
+            <span className="text-gray-400">Luxury Economy</span>
           </h1>
           
           <div 
-            className={`max-w-3xl mx-auto mb-16 transition-all duration-1000 delay-400 ${
+            className={`max-w-4xl mx-auto mb-16 transition-all duration-1000 delay-400 ${
               isVisible.hero ? 'opacity-100' : 'opacity-0'
             }`}
           >
+            <p className="text-gray-400 text-lg font-light mb-6 leading-relaxed">
+              AUCTA is not a marketplace. Not a wallet. Not a feature.
+            </p>
             <p className="text-gray-400 text-lg font-light leading-relaxed">
-              AUCTA only operates once trust is verified.<br/>
-              You don&apos;t use AUCTA — you&apos;re inside it.
+              It&apos;s the invisible layer linking boutiques, platforms, auction houses, and verified resellers 
+              — through a single protocol of custody and value.
             </p>
           </div>
           
@@ -101,7 +103,7 @@ export default function Services() {
             <button className="relative group">
               <div className="absolute inset-0 bg-white rounded-full blur-xl opacity-20 group-hover:opacity-30 transition-opacity" />
               <div className="relative bg-white text-black px-10 py-4 rounded-full font-light hover:scale-105 transition-transform flex items-center gap-3">
-                Request Access
+                Request Integration Access
                 <ArrowRight className="w-4 h-4" />
               </div>
             </button>
@@ -109,226 +111,346 @@ export default function Services() {
         </div>
       </section>
 
-      {/* AUCTA Card Section - Redesigned for better mobile */}
-      <section className="py-32 px-6 animate-section" data-section="card">
+      {/* Stripe Comparison Section */}
+      <section className="py-32 px-6 animate-section" data-section="stripe">
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 
                 className={`text-4xl md:text-5xl lg:text-6xl font-extralight mb-8 leading-[0.9] transition-all duration-1000 ${
-                  isVisible.card ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  isVisible.stripe ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
               >
-                Your access.<br/>
-                Your vault.<br/>
-                <span className="text-gray-400">Your card.</span>
+                AUCTA Is to Marketplaces<br/>
+                <span className="text-gray-400">What Stripe Is to Checkout</span>
               </h2>
               
               <p 
                 className={`text-gray-400 text-lg font-light mb-8 leading-relaxed transition-all duration-1000 delay-200 ${
-                  isVisible.card ? 'opacity-100' : 'opacity-0'
+                  isVisible.stripe ? 'opacity-100' : 'opacity-0'
                 }`}
               >
-                Welcome to the AUCTA Circle. The Black Card is not optional — it&apos;s symbolic of AUCTA&apos;s philosophy: you 
-                only hold what you&apos;ve earned, and everything you earn is protected.
+                When a luxury item is sold on a participating marketplace, buyers can 
+                now pay &quot;with AUCTA.&quot; This simple trigger links the transaction directly 
+                to the protocol: product metadata is secured, the vault is assigned, 
+                ownership is logged, and cashback or royalties are activated — all 
+                without leaving the platform.
               </p>
               
               <div 
-                className={`space-y-4 transition-all duration-1000 delay-400 ${
-                  isVisible.card ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+                className={`mb-12 transition-all duration-1000 delay-400 ${
+                  isVisible.stripe ? 'opacity-100' : 'opacity-0'
                 }`}
               >
-                {['Instant boutique recognition', 'Private client pickups', 'NFC/QR activations', 'Legacy transfer rights'].map((text, i) => (
-                  <div key={i} className="flex items-center text-sm text-gray-500 hover:text-gray-300 transition-colors">
-                    <div className="w-1 h-1 bg-gray-700 rounded-full mr-4" />
-                    {text}
+                <p className="font-light mb-4">No migration. No codebase rewrites.</p>
+                <p className="text-gray-500 text-sm italic">AUCTA operates as a certified checkout layer that quietly handles:</p>
+              </div>
+              
+              <div 
+                className={`grid md:grid-cols-2 gap-x-8 gap-y-4 mb-12 transition-all duration-1000 delay-600 ${
+                  isVisible.stripe ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+                }`}
+              >
+                {[
+                  'Ownership transfer',
+                  'KYC verification',
+                  'Cashback logic',
+                  'Vault activation',
+                  'Brand royalties',
+                  'Traceability confirmation'
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 text-sm text-gray-400 hover:text-gray-200 transition-colors">
+                    <CheckCircle className="w-3 h-3 text-green-500/60" />
+                    {item}
                   </div>
                 ))}
               </div>
+              
+              <p className="text-gray-500 italic text-sm font-light">
+                Platforms keep their interface. We handle the chain of trust.
+              </p>
             </div>
             
-            {/* AUCTA Card Visual - Responsive */}
+            {/* Protocol Integration Visual */}
             <div 
-              className={`flex justify-center lg:justify-end transition-all duration-1000 delay-600 ${
-                isVisible.card ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              className={`hidden lg:flex justify-center transition-all duration-1000 delay-800 ${
+                isVisible.stripe ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-800/20 to-transparent rounded-3xl blur-3xl" />
-                <div className="relative bg-gray-900/20 backdrop-blur-xl border border-white/5 rounded-3xl p-6 md:p-8 hover:border-white/10 transition-all">
-                  {/* Card */}
-                  <div className="relative w-72 md:w-80 h-44 md:h-48 bg-gradient-to-br from-gray-900 via-black to-gray-950 rounded-2xl p-6 shadow-2xl border border-gray-800/50">
-                    <div className="flex flex-col h-full justify-between">
-                      <div>
-                        <div className="text-sm font-light tracking-wider text-gray-300">AUCTA</div>
-                        <div className="text-xs text-gray-600 mt-1">CLOSED PROTOCOL</div>
-                      </div>
-                      
-                      <div>
-                        <div className="font-mono text-base md:text-lg tracking-wider text-gray-300 mb-1">•••• •••• •••• 8472</div>
-                        <div className="text-xs text-gray-600">FRIENDS & FAMILY</div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent rounded-3xl blur-3xl" />
+                <div className="relative bg-gray-900/20 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-white/10 transition-all">
+                  <div className="flex items-center justify-between mb-8">
+                    <span className="text-sm font-light">Protocol Integration</span>
+                    <Zap className="w-4 h-4 text-yellow-500/60" />
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-center justify-between py-3 border-b border-white/5">
+                      <span className="text-sm text-gray-400">Seamless marketplace integration</span>
+                      <div className="w-10 h-4 bg-gradient-to-r from-green-600/20 to-green-500/20 rounded-full flex items-center justify-end pr-0.5">
+                        <div className="w-3 h-3 bg-green-500 rounded-full" />
                       </div>
                     </div>
                     
-                    {/* Chip icon on card */}
-                    <div className="absolute top-6 right-6">
-                      <div className="w-10 h-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-md border border-gray-700/30"></div>
+                    <div className="bg-black/30 rounded-2xl p-6 border border-white/5">
+                      <div className="text-center text-sm font-light mb-6">Checkout Layer</div>
+                      
+                      <div className="space-y-3">
+                        {['Identity verification', 'Metadata capture', 'Vault assignment', 'Value distribution'].map((text, i) => (
+                          <div key={i} className="flex items-center text-xs text-gray-500">
+                            <div className="w-1 h-1 bg-gray-700 rounded-full mr-3" />
+                            {text}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* NFC Badge */}
-                  <div className="mt-4 text-center">
-                    <span className="inline-flex items-center gap-2 bg-gray-900/50 backdrop-blur border border-gray-800/50 rounded-full px-4 py-2 text-xs text-gray-500">
-                      <Circle className="w-2 h-2" />
-                      NFC ACTIVE
-                    </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Auction Houses Section */}
+      <section className="py-32 px-6 animate-section" data-section="auction">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Auction Integration Visual */}
+            <div 
+              className={`hidden lg:flex justify-center order-2 lg:order-1 transition-all duration-1000 ${
+                isVisible.auction ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              }`}
+            >
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent rounded-3xl blur-3xl" />
+                <div className="relative bg-gray-900/20 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-white/10 transition-all">
+                  <div className="flex items-center gap-3 mb-8">
+                    <Building className="w-5 h-5 text-gray-500" />
+                    <span className="text-sm font-light">Auction Integration</span>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Closed Suite Section */}
-      <section className="py-32 px-6 animate-section" data-section="suite">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-24">
-            <div 
-              className={`inline-flex items-center gap-2 text-xs text-gray-500 uppercase tracking-[0.2em] mb-8 transition-all duration-1000 ${
-                isVisible.suite ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-            >
-              <div className="w-8 h-px bg-gray-700" />
-              THE SUITE
-              <div className="w-8 h-px bg-gray-700" />
-            </div>
-            
-            <h2 
-              className={`text-5xl md:text-6xl lg:text-7xl font-extralight mb-8 leading-[0.9] transition-all duration-1000 delay-200 ${
-                isVisible.suite ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-            >
-              Closed Suite
-            </h2>
-            
-            <p 
-              className={`text-gray-400 text-lg font-light max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-400 ${
-                isVisible.suite ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              A permission-based infrastructure that activates once you&apos;re inside. 
-              Not a platform. Not an app. Not a marketplace.
-            </p>
-          </div>
-          
-          {/* Three core principles */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: EyeOff, title: 'Not Open', desc: 'No public browsing. No open access. Every interaction is permissioned and logged.' },
-              { icon: Eye, title: 'Not Visible', desc: 'Sealed system with no external exposure. Privacy by architecture, not policy.' },
-              { icon: Shield, title: 'Not Optional', desc: 'Once verified, AUCTA becomes your permanent infrastructure for luxury assets.' }
-            ].map((item, i) => (
-              <div 
-                key={i}
-                className={`text-center transition-all duration-1000 ${
-                  isVisible.suite ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{ transitionDelay: `${400 + i * 150}ms` }}
-              >
-                <div className="w-20 h-20 mx-auto mb-6 bg-gray-900/30 backdrop-blur rounded-full flex items-center justify-center border border-white/5 hover:border-white/10 transition-all group">
-                  <item.icon className="w-8 h-8 text-gray-600 group-hover:text-gray-300 transition-colors" />
-                </div>
-                <h3 className="text-lg font-light mb-3">{item.title}</h3>
-                <p className="text-xs text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ownership Infrastructure */}
-      <section className="py-32 px-6 animate-section" data-section="ownership">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-24">
-            <div 
-              className={`inline-flex items-center gap-2 text-xs text-gray-500 uppercase tracking-[0.2em] mb-8 transition-all duration-1000 ${
-                isVisible.ownership ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-            >
-              <div className="w-8 h-px bg-gray-700" />
-              INFRASTRUCTURE
-              <div className="w-8 h-px bg-gray-700" />
-            </div>
-            
-            <h2 
-              className={`text-5xl md:text-6xl lg:text-7xl font-extralight mb-8 leading-[0.9] transition-all duration-1000 delay-200 ${
-                isVisible.ownership ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-            >
-              Ownership<br/>
-              <span className="text-gray-400">Infrastructure</span>
-            </h2>
-            
-            <p 
-              className={`text-gray-400 text-lg font-light max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-400 ${
-                isVisible.ownership ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              Full traceability through identity-locked verification and sealed blockchain protocols.
-            </p>
-          </div>
-          
-          {/* Three infrastructure pillars */}
-          <div className="grid md:grid-cols-3 gap-8 mb-24">
-            {[
-              { icon: Key, title: 'Soulbound Tokens', desc: 'Identity-locked verification that cannot be transferred or counterfeited.' },
-              { icon: Database, title: 'Private Blockchain', desc: 'Fully sealed with no external exposure. Every transaction permanently recorded.' },
-              { icon: Wifi, title: 'Discreet NFC', desc: 'Embedded authentication chip, invisible to the naked eye.' }
-            ].map((item, i) => (
-              <div 
-                key={i}
-                className={`text-center transition-all duration-1000 ${
-                  isVisible.ownership ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{ transitionDelay: `${400 + i * 150}ms` }}
-              >
-                <div className="w-20 h-20 mx-auto mb-6 bg-gray-900/30 backdrop-blur rounded-full flex items-center justify-center border border-white/5 hover:border-white/10 transition-all group">
-                  <item.icon className="w-8 h-8 text-gray-600 group-hover:text-gray-300 transition-colors" />
-                </div>
-                <h3 className="text-lg font-light mb-3">{item.title}</h3>
-                <p className="text-xs text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          
-          {/* Value Redistribution */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent rounded-3xl blur-3xl" />
-            <div className="relative bg-gray-900/20 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-12 hover:border-white/10 transition-all">
-              <div className="text-center mb-12">
-                <h3 className="text-2xl md:text-3xl font-light mb-4">Value Redistribution</h3>
-                <p className="text-gray-400 text-base italic">&ldquo;Value doesn&apos;t vanish. It echoes.&rdquo;</p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-                <div>
-                  <h4 className="text-lg font-light mb-6">Every Transaction Tracked</h4>
-                  <div className="space-y-3">
-                    {['Automatic cashback distribution', 'Brand royalties on resale', 'Complete audit trail', 'Legal delegation support'].map((text, i) => (
-                      <div key={i} className="flex items-center text-sm text-gray-500 hover:text-gray-300 transition-colors">
-                        <div className="w-1 h-1 bg-gray-700 rounded-full mr-3" />
-                        {text}
+                  
+                  <div className="space-y-4">
+                    {[
+                      { label: 'Pre-sale verification', status: 'Active', color: 'text-green-400' },
+                      { label: 'NFC embedding', status: 'Optional', color: 'text-blue-400' },
+                      { label: 'Buyer identity logging', status: 'Secured', color: 'text-green-400' },
+                      { label: 'Vault assignment', status: 'Instant', color: 'text-purple-400' }
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center justify-between py-3">
+                        <span className="text-sm text-gray-400">{item.label}</span>
+                        <span className={`text-xs ${item.color}`}>{item.status}</span>
                       </div>
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+            
+            <div className="order-1 lg:order-2">
+              <h2 
+                className={`text-4xl md:text-5xl lg:text-6xl font-extralight mb-8 leading-[0.9] transition-all duration-1000 ${
+                  isVisible.auction ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+              >
+                Trusted by the World&apos;s<br/>
+                <span className="text-gray-400">Leading Auction Houses</span>
+              </h2>
+              
+              <p 
+                className={`text-gray-400 text-lg font-light mb-8 leading-relaxed transition-all duration-1000 delay-200 ${
+                  isVisible.auction ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                AUCTA provides end-to-end infrastructure for physical goods sold at 
+                auction — ensuring each object&apos;s identity is verified, its provenance is 
+                preserved, and its resale value remains traceable beyond the hammer.
+              </p>
+              
+              <div 
+                className={`mb-12 transition-all duration-1000 delay-400 ${
+                  isVisible.auction ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <p className="font-light mb-6">Auction houses use AUCTA to:</p>
                 
-                <div>
-                  <h4 className="text-lg font-light mb-6">Reward Persistence</h4>
-                  <p className="text-sm text-gray-500 leading-relaxed">
-                    You don&apos;t lose your reward — it follows the object. Every gift, inheritance, or resale continues the value chain for all participants in the ecosystem.
-                  </p>
+                <div className="space-y-3">
+                  {[
+                    'Verify pre-sale identity and condition',
+                    'Embed NFC traceability chips (optional)',
+                    'Log buyer identity and payment',
+                    'Assign certified ownership to a private vault',
+                    'Provide post-sale custody, royalty distribution, or legacy delegation'
+                  ].map((text, i) => (
+                    <div key={i} className="flex items-start gap-3 text-sm text-gray-500 hover:text-gray-300 transition-colors">
+                      <div className="w-1 h-1 bg-gray-700 rounded-full mt-2" />
+                      <span>{text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <p className="text-gray-500 italic text-sm font-light">
+                Once the sale is confirmed, the product becomes a self-aware digital asset — no 
+                matter how many times it resells, inherits, or transfers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Secondhand Economy Section */}
+      <section className="py-32 px-6 animate-section" data-section="secondhand">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-24">
+            <div 
+              className={`inline-flex items-center gap-2 text-xs text-gray-500 uppercase tracking-[0.2em] mb-8 transition-all duration-1000 ${
+                isVisible.secondhand ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <div className="w-8 h-px bg-gray-700" />
+              AUTHENTICATION GATEWAY
+              <div className="w-8 h-px bg-gray-700" />
+            </div>
+            
+            <h2 
+              className={`text-5xl md:text-6xl lg:text-7xl font-extralight mb-8 leading-[0.9] transition-all duration-1000 delay-200 ${
+                isVisible.secondhand ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              Bringing Structure to the<br/>
+              <span className="text-gray-400">Secondhand Economy</span>
+            </h2>
+            
+            <p 
+              className={`text-gray-400 text-lg font-light max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-400 ${
+                isVisible.secondhand ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              Pre-owned pieces entering the AUCTA system must pass through a certified authentication gateway.
+            </p>
+          </div>
+          
+          {/* Four authentication steps */}
+          <div className="grid md:grid-cols-4 gap-8 mb-24">
+            {[
+              { icon: Database, title: 'Digital Fingerprinting', desc: 'Metadata + NFC tagging' },
+              { icon: CheckCircle, title: 'Verified Assignment', desc: 'Confirmed buyer identity' },
+              { icon: Lock, title: 'Private Resale Entry', desc: 'Secured marketplace access' },
+              { icon: Zap, title: 'Value Logic Setup', desc: 'Cashback and royalty systems' }
+            ].map((item, i) => (
+              <div 
+                key={i}
+                className={`text-center transition-all duration-1000 ${
+                  isVisible.secondhand ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${400 + i * 150}ms` }}
+              >
+                <div className="w-20 h-20 mx-auto mb-6 bg-gray-900/30 backdrop-blur rounded-full flex items-center justify-center border border-white/5 hover:border-white/10 transition-all group">
+                  <item.icon className="w-8 h-8 text-gray-600 group-hover:text-gray-300 transition-colors" />
+                </div>
+                <h3 className="text-lg font-light mb-3">{item.title}</h3>
+                <p className="text-xs text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <p className="text-gray-500 text-sm mb-2 italic">We don&apos;t verify once.</p>
+            <p className="text-xl font-light">We maintain provenance across generations.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Digital to Doorstep Section */}
+      <section className="py-32 px-6 animate-section" data-section="delivery">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div 
+                className={`inline-flex items-center gap-2 text-xs text-gray-500 uppercase tracking-[0.2em] mb-8 transition-all duration-1000 ${
+                  isVisible.delivery ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+              >
+                <div className="w-8 h-px bg-gray-700" />
+                CONCIERGE SERVICE
+              </div>
+              
+              <h2 
+                className={`text-4xl md:text-5xl lg:text-6xl font-extralight mb-8 leading-[0.9] transition-all duration-1000 delay-200 ${
+                  isVisible.delivery ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+              >
+                From Digital<br/>
+                <span className="text-gray-400">to Doorstep</span>
+              </h2>
+              
+              <p 
+                className={`text-gray-400 text-lg font-light mb-8 leading-relaxed transition-all duration-1000 delay-400 ${
+                  isVisible.delivery ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                AUCTA&apos;s private delivery services are available to Black and Centurion 
+                clients. Personal stylists, curators, and houses may send pieces directly 
+                to clients with verified AUCTA vaults.
+              </p>
+              
+              <div 
+                className={`mb-12 transition-all duration-1000 delay-600 ${
+                  isVisible.delivery ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <p className="font-light mb-6">Each delivery includes:</p>
+                
+                <div className="space-y-3">
+                  {[
+                    'Embedded NFC tagging',
+                    'Sealed ownership logs',
+                    'Immediate app visibility',
+                    'Concierge support',
+                    'One-tap transfer if refused or returned'
+                  ].map((text, i) => (
+                    <div key={i} className="flex items-center gap-3 text-sm text-gray-500 hover:text-gray-300 transition-colors">
+                      <div className="w-1 h-1 bg-gray-700 rounded-full" />
+                      {text}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <p className="text-gray-500 italic text-sm font-light">
+                Think of it as luxury&apos;s version of peer-to-peer.<br/>
+                But logged, insured, and permanent.
+              </p>
+            </div>
+            
+            {/* Concierge Network Visual */}
+            <div 
+              className={`hidden lg:flex justify-center transition-all duration-1000 delay-800 ${
+                isVisible.delivery ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              }`}
+            >
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent rounded-3xl blur-3xl" />
+                <div className="relative bg-gray-900/20 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-white/10 transition-all">
+                  <div className="flex items-center gap-3 mb-8">
+                    <Users className="w-5 h-5 text-gray-500" />
+                    <span className="text-sm font-light">Concierge Network</span>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    {[
+                      { label: 'Private Stylists', value: '24/7' },
+                      { label: 'Curated Houses', value: 'Verified' },
+                      { label: 'White-glove Delivery', value: 'Global' }
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center justify-between">
+                        <span className="text-sm text-gray-400">{item.label}</span>
+                        <span className="text-sm font-mono text-gray-300">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -336,97 +458,62 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Structured Trust Section */}
-      <section className="py-32 px-6 animate-section" data-section="trust">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-24">
-            <div 
-              className={`inline-flex items-center gap-2 text-xs text-gray-500 uppercase tracking-[0.2em] mb-8 transition-all duration-1000 ${
-                isVisible.trust ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-            >
-              <div className="w-8 h-px bg-gray-700" />
-              TRUST ARCHITECTURE
-              <div className="w-8 h-px bg-gray-700" />
-            </div>
-            
-            <h2 
-              className={`text-5xl md:text-6xl lg:text-7xl font-extralight mb-8 leading-[0.9] transition-all duration-1000 delay-200 ${
-                isVisible.trust ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-            >
-              Structured<br/>
-              <span className="text-gray-400">Trust</span>
-            </h2>
-            
-            <p 
-              className={`text-gray-400 text-lg font-light max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-400 ${
-                isVisible.trust ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              This isn&apos;t assistance. It&apos;s structured trust. Luxury service is no longer about being 
-              pampered — it&apos;s about being protected.
-            </p>
+      {/* P2P Section */}
+      <section className="py-32 px-6 animate-section" data-section="p2p">
+        <div className="container mx-auto max-w-7xl text-center">
+          <div 
+            className={`inline-flex items-center gap-2 text-xs text-gray-500 uppercase tracking-[0.2em] mb-8 transition-all duration-1000 ${
+              isVisible.p2p ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
+            <div className="w-8 h-px bg-gray-700" />
+            PEER TO PEER
+            <div className="w-8 h-px bg-gray-700" />
           </div>
           
-          {/* Four trust pillars */}
-          <div className="grid md:grid-cols-4 gap-8 mb-24">
+          <h2 
+            className={`text-5xl md:text-6xl lg:text-7xl font-extralight mb-8 leading-[0.9] transition-all duration-1000 delay-200 ${
+              isVisible.p2p ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
+            P2P, Without<br/>
+            <span className="text-gray-400">the Risk</span>
+          </h2>
+          
+          <p 
+            className={`text-gray-400 text-lg font-light max-w-4xl mx-auto leading-relaxed mb-20 transition-all duration-1000 delay-400 ${
+              isVisible.p2p ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            Private clients can transfer high-value items securely between AUCTA vaults. All peer-to-peer 
+            resales or gifts go through encrypted smart delegation, facial reauthentication, and recorded 
+            pricing logic.
+          </p>
+          
+          {/* Four guarantees */}
+          <div className="grid md:grid-cols-4 gap-8 mb-20">
             {[
-              { icon: Shield, title: 'White-Glove Delivery', desc: 'Secure, personalized handover with full chain of custody.' },
-              { icon: Key, title: 'Transfer Protocol', desc: 'Cryptographically verified ownership transfers between parties.' },
-              { icon: Settings, title: 'Inheritance Triggers', desc: 'Automated succession based on predefined legal conditions.' },
-              { icon: Lock, title: 'Legal Proxy', desc: 'Delegated authority for stylists, heirs, and trusted advisors.' }
+              { icon: Shield, text: 'No fraud' },
+              { icon: CheckCircle, text: 'No broken provenance' },
+              { icon: Star, text: 'No lost royalties' },
+              { icon: FileCheck, text: 'No paper trails' }
             ].map((item, i) => (
               <div 
                 key={i}
                 className={`text-center transition-all duration-1000 ${
-                  isVisible.trust ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  isVisible.p2p ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
-                style={{ transitionDelay: `${400 + i * 150}ms` }}
+                style={{ transitionDelay: `${600 + i * 150}ms` }}
               >
                 <div className="w-16 h-16 mx-auto mb-4 bg-gray-900/30 backdrop-blur rounded-2xl flex items-center justify-center border border-white/5 hover:border-white/10 transition-all group">
                   <item.icon className="w-6 h-6 text-gray-600 group-hover:text-gray-300 transition-colors" />
                 </div>
-                <h4 className="text-base font-light mb-2">{item.title}</h4>
-                <p className="text-xs text-gray-600">{item.desc}</p>
+                <h4 className="text-base font-light">{item.text}</h4>
               </div>
             ))}
           </div>
           
-          {/* Security Protocols */}
-          <div>
-            <div className="text-center mb-16">
-              <h3 className="text-3xl md:text-4xl font-light mb-4">Security Protocols</h3>
-              <p className="text-gray-400 text-base font-light max-w-3xl mx-auto">
-                More than protection — this is digital vault infrastructure that operates like private banking systems.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                { icon: Lock, title: 'Emergency Escrow', desc: 'Multi-signature security with time-locked recovery protocols. Your assets remain accessible even in crisis scenarios.' },
-                { icon: WifiOff, title: 'Offline Mode', desc: 'Critical functions operate without network dependency. Your security infrastructure remains operational always.' },
-                { icon: Eye, title: 'Biometric Fallback', desc: 'Identity verification that cannot be stolen or duplicated. Multiple authentication layers ensure only you control access.' },
-                { icon: Settings, title: 'Command Center', desc: 'Delegated control hub for managing multiple assets, beneficiaries, and authorization levels from one interface.' }
-              ].map((item, i) => (
-                <div 
-                  key={i}
-                  className={`transition-all duration-1000 ${
-                    isVisible.trust ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ transitionDelay: `${600 + i * 150}ms` }}
-                >
-                  <div className="flex items-start gap-4 bg-gray-900/20 backdrop-blur border border-white/5 rounded-2xl p-6 hover:border-white/10 transition-all">
-                    <item.icon className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="text-base font-light mb-2">{item.title}</h4>
-                      <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <p className="text-gray-500 text-lg italic font-light">Just clean, sealed, protocol-led movement.</p>
         </div>
       </section>
 
@@ -438,31 +525,41 @@ export default function Services() {
               isVisible.cta ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            &ldquo;Silence, control,<br/>
-            <span className="text-gray-400">trust, reward.&rdquo;</span>
+            Wherever Luxury Moves,<br/>
+            <span className="text-gray-400">AUCTA Follows</span>
           </h2>
           
           <p 
-            className={`text-gray-400 text-lg font-light mb-16 italic transition-all duration-1000 delay-200 ${
+            className={`text-gray-400 text-lg font-light mb-8 leading-relaxed transition-all duration-1000 delay-200 ${
               isVisible.cta ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            Infrastructure, not a dealer.
+            From boutiques to bids, from gifting to legacy — every moment of value 
+            deserves a system that protects it.
+          </p>
+          
+          <p 
+            className={`text-xl font-light mb-16 transition-all duration-1000 delay-400 ${
+              isVisible.cta ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            AUCTA is that system.
           </p>
           
           <div 
-            className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-1000 delay-400 ${
+            className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-1000 delay-600 ${
               isVisible.cta ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            <button className="px-8 py-3 rounded-full border border-white/10 text-sm font-light hover:bg-white/5 transition-all">
-              Learn More
+            <button className="px-8 py-3 rounded-full border border-white/10 text-sm font-light hover:bg-white/5 transition-all flex items-center justify-center gap-3">
+              Contact Institutional Team
+              <ArrowRight className="w-3 h-3" />
             </button>
             <button className="relative group">
               <div className="absolute inset-0 bg-white rounded-full blur-xl opacity-20 group-hover:opacity-30 transition-opacity" />
               <div className="relative bg-white text-black px-8 py-3 rounded-full text-sm font-light hover:scale-105 transition-transform flex items-center justify-center gap-3">
-                Request Access
-                <ArrowRight className="w-3 h-3" />
+                Become a Certified Partner
+                <Lock className="w-3 h-3" />
               </div>
             </button>
           </div>

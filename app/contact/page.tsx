@@ -143,10 +143,6 @@ export default function ContactPage() {
                             <span className="text-gray-600 block mb-1">Email</span>
                             <div className="text-gray-400">partnerships@aucta.io</div>
                           </div>
-                          <div>
-                            <span className="text-gray-600 block mb-1">Subject</span>
-                            <div className="text-gray-400">Integration Request — [Your Company Name]</div>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -186,8 +182,6 @@ export default function ContactPage() {
                             <div className="text-gray-400">support@aucta.io</div>
                           </div>
                           <div>
-                            <span className="text-gray-600 block mb-1">Subject</span>
-                            <div className="text-gray-400">Vault Access — [Item Reference Number]</div>
                           </div>
                         </div>
                       </div>
@@ -304,7 +298,7 @@ export default function ContactPage() {
               }`}
             >
               Discretion is part of our infrastructure. AUCTA operates globally through 
-              closed partnerships with legal entities based in Luxembourg and 
+              closed partnerships with legal entities based in Paris and 
               operational primary overseas under EU law.
             </p>
           </div>
@@ -342,7 +336,7 @@ export default function ContactPage() {
               isVisible.social ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Social (Minimal)
+            Social
           </h2>
           
           <p 
@@ -397,7 +391,7 @@ export default function ContactPage() {
           </p>
           
           <p className="text-gray-700 text-xs">
-            © 2024 AUCTA. All rights reserved. Private access only.
+            © 2025 AUCTA. All rights reserved. Private access only.
           </p>
         </div>
       </footer>

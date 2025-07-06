@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Linkedin, Twitter, Instagram, Youtube, Facebook } from 'lucide-react'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
@@ -72,42 +71,6 @@ export default function Footer() {
                 A standard — built for continuity.
               </p>
             </div>
-
-            <div>
-              <h3 className="text-lg font-medium text-white mb-4">Follow us</h3>
-              <div className="flex space-x-3">
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-gray-800/60 rounded-lg flex items-center justify-center hover:bg-gray-700/60 transition-colors border border-gray-700/30"
-                >
-                  <Linkedin className="w-5 h-5 text-gray-400" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-gray-800/60 rounded-lg flex items-center justify-center hover:bg-gray-700/60 transition-colors border border-gray-700/30"
-                >
-                  <Twitter className="w-5 h-5 text-gray-400" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-gray-800/60 rounded-lg flex items-center justify-center hover:bg-gray-700/60 transition-colors border border-gray-700/30"
-                >
-                  <Instagram className="w-5 h-5 text-gray-400" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-gray-800/60 rounded-lg flex items-center justify-center hover:bg-gray-700/60 transition-colors border border-gray-700/30"
-                >
-                  <Youtube className="w-5 h-5 text-gray-400" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-gray-800/60 rounded-lg flex items-center justify-center hover:bg-gray-700/60 transition-colors border border-gray-700/30"
-                >
-                  <Facebook className="w-5 h-5 text-gray-400" />
-                </a>
-              </div>
-            </div>
           </div>
 
           {/* Product Links */}
@@ -137,11 +100,6 @@ export default function Footer() {
               <li>
                 <Link href="/get-aucta" className="text-gray-400 hover:text-white transition-colors">
                   Get AUCTA
-                </Link>
-              </li>
-              <li>
-                <Link href="/login" className="text-gray-400 hover:text-white transition-colors">
-                  Log In
                 </Link>
               </li>
             </ul>

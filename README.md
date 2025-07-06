@@ -34,3 +34,65 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Website Structure
+
+```
+my-website/
+├── app/                          # App Router directory (Next.js 13+)
+│   ├── globals.css              # Global styles
+│   ├── layout.tsx               # Root layout component
+│   ├── page.tsx                 # Home page
+│   ├── about/                   # About page route
+│   │   └── page.tsx
+│   ├── contact/                 # Contact page route
+│   │   └── page.tsx
+│   └── api/                     # API routes
+│       └── route.ts
+├── components/                   # Reusable UI components
+│   ├── ui/                      # Basic UI components
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   └── Modal.tsx
+│   ├── layout/                  # Layout components
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── Navbar.tsx
+│   └── sections/                # Page sections
+│       ├── Hero.tsx
+│       ├── Features.tsx
+│       └── Testimonials.tsx
+├── public/                      # Static assets
+│   ├── images/
+│   ├── icons/
+│   └── favicon.ico
+├── styles/                      # Additional stylesheets
+│   └── components.css
+├── lib/                         # Utility functions
+│   └── utils.ts
+├── types/                       # TypeScript type definitions
+│   └── index.ts
+└── package.json
+```
+
+### Key Directories
+
+- **`/app`** - Contains all pages and layouts using Next.js App Router
+- **`/components`** - Reusable React components organized by type
+- **`/public`** - Static files served directly by the web server
+- **`/styles`** - CSS files and styling resources
+- **`/lib`** - Utility functions and shared logic
+- **`/types`** - TypeScript type definitions
+
+### Routing Structure
+
+- **`/`** - Homepage (app/page.tsx)
+- **`/about`** - About page (app/about/page.tsx)
+- **`/contact`** - Contact page (app/contact/page.tsx)
+- **`/api/*`** - API endpoints (app/api/*/route.ts)
+
+### Component Organization
+
+- **UI Components**: Basic, reusable components (buttons, cards, modals)
+- **Layout Components**: Navigation, headers, footers
+- **Section Components**: Larger page sections (hero, features, testimonials)
